@@ -1,0 +1,19 @@
+<div>
+    <input type="text" #novoItem placeholder="Adicionar novo item">
+    <button (click)="adicionarItem(novoItem.value)">Adicionar</button>
+  
+    <h3>Não Comprados</h3>
+    <ul>
+      <li *ngFor="let item of getItensNaoComprados(); let i = index">
+        <app-item [item]="item" (editar)="editarItem(i, $event)" (marcar)="marcarComoComprado(i)" (excluir)="excluirItem(i)"></app-item>
+      </li>
+    </ul>
+  
+    <h3>Comprados</h3>
+    <ul>
+      <li *ngFor="let item of getItensComprados(); let i = index">
+        <app-item [item]="item" (editar)="editarItem(i, $event)" (marcar)="marcarComoComprado(i)" (excluir)="excluirItem(i)"></app-item>
+      </li>
+    </ul>
+  </div>
+  

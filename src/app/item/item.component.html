@@ -1,0 +1,6 @@
+<div [class.comprado]="item.comprado">
+    <input type="text" [value]="item.nome" (change)="editarItem($event.target.value)">
+    <button (click)="marcarItem()">Marcar como {{item.comprado ? 'Não Comprado' : 'Comprado'}}</button>
+    <button (click)="excluirItem()">Excluir</button>
+  </div>
+  
